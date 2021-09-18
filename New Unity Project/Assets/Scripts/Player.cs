@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private const float speedMultiplier = 3;
+
     private float horizontalSpeed = 0;
     private float verticalSpeed = 0;
 
-    Rigidbody RigidbodyComponent; 
+    Rigidbody RigidbodyComponent;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RigidbodyComponent.velocity = new Vector3(horizontalSpeed, 0, verticalSpeed);
+        RigidbodyComponent.velocity = new Vector3(horizontalSpeed, 0, verticalSpeed) * speedMultiplier;
     }
 }
